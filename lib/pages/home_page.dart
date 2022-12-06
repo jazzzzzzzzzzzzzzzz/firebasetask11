@@ -36,6 +36,43 @@ class HomePage extends StatelessWidget {
                 "Obtener la data",
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                tasksReference.add(
+                  {
+                    "title": "Ir de comprar al super",
+                    "descrption": "Debemos de comprar comida para todo el mes",
+                  },
+                ).then((DocumentReference value) {
+                  print(value.id);
+                }).catchError((error) {
+                  print("Ocurrio un eroor en el registro");
+                }).whenComplete(() {
+                  print("El registro ha terminado");
+                });
+              },
+              child: Text(
+                "Agregar documento",
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                tasksReference
+                    .doc("GyD1GFkVD7p9JUPcDtF1")
+                    .update({"title": "ir de paseo al campo"}).catchError(
+                  (error) {
+                    print(error);
+                  },
+                ).whenComplete(
+                  () {
+                    print("Actualizacion terminada");
+                  },
+                );
+              },
+              child: Text(
+                "Actualizar documento",
+              ),
+            )
           ],
         ),
       ),
