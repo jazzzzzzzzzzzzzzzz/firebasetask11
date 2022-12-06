@@ -11,18 +11,24 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Firebase Firestore"),
       ),
-      body: Center(
+      /* body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
+  ----Primer boton-------------
             ElevatedButton(
               onPressed: () {
                 tasksReference.get().then((QuerySnapshot value) {
+
+
                   // QuerySnapshot collection = value;
                   //List<QueryDocumentSnapshot> docs = collection.docs;
                   //QueryDocumentSnapshot doc = docs[1];
                   //print(doc.id);
                   //print(doc.data());
+
+
 
                   QuerySnapshot collection = value;
                   collection.docs.forEach((QueryDocumentSnapshot element) {
@@ -36,6 +42,9 @@ class HomePage extends StatelessWidget {
                 "Obtener la data",
               ),
             ),
+            
+  ----Segundo boton-----
+
             ElevatedButton(
               onPressed: () {
                 tasksReference.add(
@@ -55,6 +64,8 @@ class HomePage extends StatelessWidget {
                 "Agregar documento",
               ),
             ),
+
+    ----Tercer boton --------------
             ElevatedButton(
               onPressed: () {
                 tasksReference
@@ -73,6 +84,9 @@ class HomePage extends StatelessWidget {
                 "Actualizar documento",
               ),
             ),
+
+  ----Cuarto boton-------
+
             ElevatedButton(
               onPressed: () {
                 tasksReference.doc("9TQHQz9R4Z8KLIc1ew1L").delete().catchError(
@@ -89,6 +103,8 @@ class HomePage extends StatelessWidget {
                 "Eliminar documento",
               ),
             ),
+
+  ----Quinto boton--------
             ElevatedButton(
               onPressed: () {
                 tasksReference.doc("AB5559").set(
@@ -107,8 +123,7 @@ class HomePage extends StatelessWidget {
               ),
             )
           ],
-        ),
-      ),
+        ),*/
     );
   }
 }
