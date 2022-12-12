@@ -20,11 +20,45 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Firebase Firestore"),
-      ),
-      body: StreamBuilder(
+      
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding:  const EdgeInsets.symmetric(horizontal: 14.0, vertical: 18.0),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(20.0),
+                  bottomLeft: Radius.circular(20.0),
+                  ),
+
+              ),
+
+              child: SafeArea(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Bienvenido, Ramon",
+                    )
+                    Text(
+                      "Mis Tareas",
+                    ),
+                    TextField(),
+                  ],
+                ),
+              ),
+            )
+          ]
+        ),
+      )
+
+     /* body: StreamBuilder(
         stream: tasksReference.snapshots(),
         builder: (BuildContext context, AsyncSnapshot snap) {
           if (snap.hasData) {
@@ -47,6 +81,7 @@ class HomePage extends StatelessWidget {
           );
         },
       ),
+      */
 
       /* body: Center(
         child: Column(
